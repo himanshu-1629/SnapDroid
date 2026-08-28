@@ -1,0 +1,447 @@
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+/* =========================================================
+   SNAPDROID — LAYOUT CARD PREVIEWS
+   ========================================================= */
+
+.layout-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #08090c;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* subtle studio lighting */
+.layout-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(132, 255, 0, 0.08),
+      transparent 55%
+    );
+}
+
+
+/* =========================================================
+   FAKE PHOTO MATERIAL
+   ========================================================= */
+
+.preview-photo {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+
+  border-radius: 3px;
+}
+
+/* photo 1 */
+.photo-one {
+  background:
+    linear-gradient(
+      135deg,
+      #667eea 0%,
+      #764ba2 100%
+    );
+}
+
+/* photo 2 */
+.photo-two {
+  background:
+    linear-gradient(
+      135deg,
+      #ff9966 0%,
+      #ff5e62 100%
+    );
+}
+
+/* photo 3 */
+.photo-three {
+  background:
+    linear-gradient(
+      135deg,
+      #36d1dc 0%,
+      #5b86e5 100%
+    );
+}
+
+/* photo 4 */
+.photo-four {
+  background:
+    linear-gradient(
+      135deg,
+      #11998e 0%,
+      #38ef7d 100%
+    );
+}
+
+
+/* =========================================================
+   POLAROID
+   ========================================================= */
+
+.layout-preview.polaroid-preview {
+  background: #08090c;
+}
+
+.preview-polaroid {
+  position: relative;
+
+  width: 125px;
+  height: 150px;
+
+  padding: 9px 9px 27px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.45);
+
+  transform: rotate(-5deg);
+
+  z-index: 2;
+}
+
+.preview-polaroid::after {
+  content: "SNAPDROID";
+
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  width: 100%;
+
+  text-align: center;
+
+  color: #151515;
+
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.preview-polaroid .preview-photo {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =========================================================
+   GRID — 2 × 2
+   ========================================================= */
+
+.layout-preview.grid-preview {
+  background: #08090c;
+}
+
+.preview-grid {
+  position: relative;
+  z-index: 2;
+
+  width: 154px;
+  height: 154px;
+
+  padding: 7px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  gap: 6px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.4);
+
+  border-radius: 2px;
+}
+
+.preview-grid .preview-photo {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =========================================================
+   PHOTO STRIP
+   ========================================================= */
+
+.layout-preview.strip-preview {
+  background: #08090c;
+}
+
+.preview-strip {
+  position: relative;
+  z-index: 2;
+
+  width: 108px;
+
+  padding: 8px 8px 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.45);
+}
+
+.preview-strip .preview-photo {
+  width: 100%;
+  height: 52px;
+}
+
+.strip-bottom {
+  margin-top: 2px;
+
+  text-align: center;
+
+  color: #151515;
+
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   COLLAGE
+   ========================================================= */
+
+.layout-preview.collage-preview {
+  background: #08090c !important;
+  overflow: hidden !important;
+}
+.preview-collage {
+  position: relative;
+  width: 170px;
+  height: 210px;
+  margin: auto;
+}
+
+.preview-collage-photo {
+  position: absolute;
+  width: 105px;
+  height: 80px;
+  background: linear-gradient(135deg, #8b5cf6, #4f46e5);
+  border: 5px solid white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+.preview-collage-1 {
+  top: 15px;
+  left: 5px;
+  transform: rotate(-8deg);
+}
+
+.preview-collage-2 {
+  top: 25px;
+  right: 0;
+  transform: rotate(6deg);
+}
+
+.preview-collage-3 {
+  top: 85px;
+  left: 45px;
+  transform: rotate(-3deg);
+  z-index: 3;
+}
+
+.preview-collage-brand {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+/* =========================================================
+   COLLAGE PHOTO COLORS
+   ========================================================= */
+
+.collage-one span {
+  background:
+    linear-gradient(
+      135deg,
+      #667eea,
+      #764ba2
+    );
+}
+
+.collage-two span {
+  background:
+    linear-gradient(
+      135deg,
+      #ff9966,
+      #ff5e62
+    );
+}
+
+.collage-three span {
+  background:
+    linear-gradient(
+      135deg,
+      #36d1dc,
+      #5b86e5
+    );
+}
+
+.collage-four span {
+  background:
+    linear-gradient(
+      135deg,
+      #11998e,
+      #38ef7d
+    );
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.layout-card:hover .preview-polaroid {
+  transform: rotate(-3deg) translateY(-3px);
+}
+
+.layout-card:hover .preview-grid {
+  transform: translateY(-3px);
+}
+
+.layout-card:hover .preview-strip {
+  transform: translateY(-3px);
+}
+
+.layout-card:hover .preview-collage {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .preview-polaroid {
+    width: 105px;
+    height: 125px;
+  }
+
+  .preview-grid {
+    width: 135px;
+    height: 135px;
+  }
+
+  .preview-strip {
+    width: 95px;
+  }
+
+  .preview-collage {
+    transform: scale(0.9);
+  }
+
+}
+.strip-photo {
+  position: absolute;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  background: #111;
+}
+
+.strip-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+.strip-photo-1 {
+  left: 26%;
+  top: 7.5%;
+  width: 48%;
+  height: 17%;
+}
+
+.strip-photo-2 {
+  left: 26%;
+  top: 26.8%;
+  width: 48%;
+  height: 17%;
+}
+
+.strip-photo-3 {
+  left: 26%;
+  top: 46%;
+  width: 48%;
+  height: 17%;
+}
+
+.strip-photo-4 {
+  left: 26%;
+  top: 65.2%;
+  width: 48%;
+  height: 17%;
+}
+.strip-frame-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+.preview-polaroid .template-preview-image {
+  height: 230px;
+  max-width: 85%;
+}

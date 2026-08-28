@@ -1,0 +1,3058 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #08090d;
+  color: white;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+
+/* =========================================
+   EMAIL SCREEN
+========================================= */
+
+.welcome {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 65px 25px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(140, 255, 0, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(120, 80, 255, 0.14),
+      transparent 30%
+    ),
+    #08090d;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 17px;
+
+  background: #8cff00;
+
+  font-size: 27px;
+
+  box-shadow:
+    0 0 35px rgba(140, 255, 0, 0.3);
+}
+
+.welcome > h1 {
+  margin: 0;
+
+  font-size: clamp(45px, 7vw, 75px);
+
+  line-height: 1;
+
+  letter-spacing: -4px;
+}
+
+.welcome > h1 span {
+  color: #8cff00;
+}
+
+.tagline {
+  margin: 15px 0 35px;
+
+  color: #8a8e9b;
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   EMAIL CARD
+========================================= */
+
+.email-card {
+  width: min(560px, 95vw);
+
+  padding: 35px;
+
+  border: 1px solid #272a35;
+
+  border-radius: 25px;
+
+  background: rgba(18, 20, 27, 0.8);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+.email-card h2 {
+  margin: 0;
+
+  font-size: 25px;
+}
+
+.description {
+  margin: 10px 0 25px;
+
+  color: #858997;
+}
+
+
+/* =========================================
+   EMAIL INPUT
+========================================= */
+
+.email-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.email-row {
+  display: flex;
+
+  gap: 8px;
+}
+
+.email-input-wrapper {
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 15px;
+
+  border: 1px solid #2d303b;
+
+  border-radius: 13px;
+
+  background: #0c0e13;
+
+  transition: 0.2s;
+}
+
+.email-input-wrapper:focus-within {
+  border-color: #8cff00;
+
+  box-shadow:
+    0 0 0 3px rgba(140, 255, 0, 0.08);
+}
+
+.email-input-wrapper input {
+  width: 100%;
+
+  padding: 15px 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+}
+
+.email-input-wrapper input::placeholder {
+  color: #626674;
+}
+
+.remove-btn {
+  width: 48px;
+
+  border: 1px solid #2d303b;
+
+  border-radius: 13px;
+
+  background: #11131a;
+
+  color: #777;
+
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  color: #ff5555;
+
+  border-color: #ff5555;
+}
+
+
+/* =========================================
+   EMAIL BUTTONS
+========================================= */
+
+.add-email {
+  margin-top: 15px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8cff00;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.continue-btn {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 17px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: #8cff00;
+
+  color: #080a08;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  box-shadow:
+    0 10px 30px rgba(140, 255, 0, 0.15);
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 40px rgba(140, 255, 0, 0.25);
+}
+
+.privacy {
+  margin: 18px 0 0;
+
+  color: #555965;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   LAYOUT SCREEN
+========================================= */
+
+.layout-screen {
+  min-height: 100vh;
+
+  padding: 55px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(140, 255, 0, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(120, 80, 255, 0.14),
+      transparent 30%
+    ),
+    #08090d;
+}
+
+.layout-header {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+.small-logo {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 15px;
+
+  border-radius: 15px;
+
+  background: #8cff00;
+
+  font-size: 25px;
+
+  box-shadow:
+    0 0 30px rgba(140, 255, 0, 0.2);
+}
+
+.step-label {
+  margin: 0 0 10px;
+
+  color: #8cff00;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.layout-header h1 {
+  margin: 0;
+
+  font-size: clamp(40px, 5vw, 60px);
+
+  letter-spacing: -3px;
+}
+
+.layout-header h1 span {
+  color: #8cff00;
+}
+
+.layout-header p:last-child {
+  margin-top: 12px;
+
+  color: #858997;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   LAYOUT GRID
+========================================= */
+
+.layout-grid {
+  width: min(1000px, 95vw);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   LAYOUT CARD
+========================================= */
+
+.layout-card {
+  position: relative;
+
+  padding: 15px;
+
+  border-radius: 22px;
+
+  border: 1px solid #272a35;
+
+  background: rgba(18, 20, 27, 0.8);
+
+  color: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border 0.25s ease,
+    box-shadow 0.25s ease;
+
+  overflow: hidden;
+}
+
+.layout-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #454957;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.layout-card.selected {
+  border-color: #8cff00;
+
+  box-shadow:
+    0 0 0 2px rgba(140, 255, 0, 0.15),
+    0 20px 50px rgba(140, 255, 0, 0.1);
+}
+
+
+/* =========================================
+   LAYOUT PREVIEW
+========================================= */
+
+.layout-preview {
+  height: 250px;
+
+  border-radius: 15px;
+
+  background: #08090d;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  margin-bottom: 15px;
+}
+
+
+/* =========================================
+   POLAROID
+========================================= */
+
+/* =========================================
+   POLAROID PREVIEW
+========================================= */
+
+.polaroid-screen {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 50px 20px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(140, 255, 0, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(120, 80, 255, 0.14),
+      transparent 30%
+    ),
+    #08090d;
+}
+
+.polaroid-card {
+  position: relative;
+
+  width: 420px;
+  height: 760px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+
+.polaroid-photos {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+}
+
+.polaroid-photo {
+  position: absolute;
+
+  /*
+    IMPORTANT:
+    This controls the actual photo area
+    inside polaroid-frame.png.
+  */
+
+  top: 105px;
+  left: 55px;
+
+  width: 310px;
+  height: 470px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.polaroid-frame {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.polaroid-actions {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+/* =========================================
+   GRID
+========================================= */
+.grid-photo {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #ddd;
+
+  border-radius: 4px;
+}
+
+.grid-photo div {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8cff00,
+      #7c4dff
+    );
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   PHOTO STRIP
+========================================= */
+
+
+
+/* =========================================
+   COLLAGE
+========================================= */
+
+.collage-photo {
+  position: relative;
+
+  width: 180px;
+  height: 180px;
+}
+
+.collage-photo div {
+  position: absolute;
+
+  width: 100px;
+  height: 120px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8cff00,
+      #7c4dff
+    );
+
+  border: 5px solid white;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.collage-photo div:nth-child(1) {
+  left: 5px;
+  top: 30px;
+
+  transform: rotate(-12deg);
+}
+
+.collage-photo div:nth-child(2) {
+  right: 5px;
+  top: 5px;
+
+  transform: rotate(8deg);
+}
+
+.collage-photo div:nth-child(3) {
+  left: 40px;
+  bottom: 0;
+
+  transform: rotate(-3deg);
+}
+
+
+/* =========================================
+   LAYOUT INFO
+========================================= */
+
+.layout-info {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 2px 4px;
+}
+
+.layout-info h3 {
+  margin: 0 0 5px;
+
+  font-size: 18px;
+}
+
+.layout-info p {
+  margin: 0;
+
+  color: #777b88;
+
+  font-size: 12px;
+}
+
+.layout-icon {
+  font-size: 25px;
+}
+
+
+/* =========================================
+   SELECTED BADGE
+========================================= */
+
+.selected-badge {
+  position: absolute;
+
+  top: 25px;
+  right: 25px;
+
+  padding: 6px 9px;
+
+  border-radius: 20px;
+
+  background: #8cff00;
+
+  color: #080a08;
+
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+.layout-continue {
+  width: min(500px, 90vw);
+
+  margin-top: 35px;
+}
+
+
+/* =========================================
+   CAMERA SCREEN
+========================================= */
+
+.camera-screen {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 25px 35px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(140, 255, 0, 0.1),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(120, 80, 255, 0.12),
+      transparent 30%
+    ),
+    #08090d;
+}
+
+
+/* =========================================
+   CAMERA TOP
+========================================= */
+
+.camera-top {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto 1fr;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.camera-back {
+  justify-self: start;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  border: 1px solid #292c36;
+
+  background: #12141b;
+
+  color: #aaa;
+
+  cursor: pointer;
+}
+
+.camera-back:hover {
+  color: white;
+
+  border-color: #8cff00;
+}
+
+.camera-brand {
+  text-align: center;
+}
+
+.camera-logo {
+  font-size: 25px;
+}
+
+.camera-top h1 {
+  margin: 0;
+
+  font-size: 28px;
+
+  letter-spacing: -1px;
+}
+
+.camera-top h1 span {
+  color: #8cff00;
+}
+
+.camera-layout {
+  justify-self: end;
+
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  background: #151720;
+
+  color: #8cff00;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   CAMERA CONTAINER
+========================================= */
+
+.camera-container {
+  position: relative;
+
+  width: min(520px, 80vw);
+  aspect-ratio: 1 / 1;
+  height: auto;
+
+  margin: 0 auto;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background: #050507;
+
+  border: 1px solid #2a2d38;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(140, 255, 0, 0.05);
+}
+
+/* =========================================
+   LIVE CAMERA
+========================================= */
+
+.camera-video {
+  width: min(520px, 80vw);
+  aspect-ratio: 1 / 1;
+  height: auto;
+
+  object-fit: cover;
+  transform: scaleX(-1);
+
+  display: block;
+  margin: 0 auto;
+
+  transition: filter 0.3s ease;
+}
+
+
+/* =========================================
+   LIVE FILTERS
+========================================= */
+
+/* ORIGINAL */
+
+.filter-original {
+  filter: none;
+}
+
+
+/* DROID */
+
+.filter-droid {
+  filter:
+    saturate(1.7)
+    contrast(1.15)
+    brightness(1.08);
+}
+
+
+/* CYBER */
+
+.filter-cyber {
+  filter:
+    saturate(1.8)
+    contrast(1.3)
+    hue-rotate(25deg)
+    brightness(0.95);
+}
+
+
+/* HACKER */
+
+.filter-hacker {
+  filter:
+    grayscale(0.8)
+    contrast(1.5)
+    brightness(0.8)
+    sepia(0.2);
+}
+
+
+/* RETRO */
+
+.filter-retro {
+  filter:
+    sepia(0.55)
+    saturate(1.4)
+    contrast(1.05)
+    brightness(1.05);
+}
+
+
+/* PIXEL */
+
+.filter-pixel {
+  filter:
+    saturate(1.8)
+    contrast(1.4)
+    brightness(1.05);
+}
+
+
+/* =========================================
+   ACTIVE FILTER LABEL
+========================================= */
+
+.active-filter-label {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  padding: 9px 14px;
+
+  border-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  border: 1px solid rgba(140, 255, 0, 0.5);
+
+  color: #8cff00;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   CAMERA ERROR
+========================================= */
+
+.camera-error {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #aaa;
+}
+
+.camera-error-icon {
+  font-size: 60px;
+}
+
+.camera-error h2 {
+  color: white;
+
+  margin-bottom: 5px;
+}
+
+.camera-error p {
+  color: #777b88;
+}
+
+
+/* =========================================
+   CAMERA CONTROLS
+========================================= */
+
+.camera-controls {
+  width: min(1100px, 90vw);
+
+  margin: 20px auto 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+.filter-placeholder {
+  display: flex;
+
+  gap: 8px;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+}
+
+.filter-placeholder::-webkit-scrollbar {
+  display: none;
+}
+
+.filter {
+  white-space: nowrap;
+
+  padding: 10px 15px;
+
+  border-radius: 20px;
+
+  border: 1px solid #292c36;
+
+  background: #12141b;
+
+  color: #888;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.filter:hover {
+  color: white;
+
+  border-color: #555;
+}
+
+.filter.active {
+  border-color: #8cff00;
+
+  color: #8cff00;
+
+  background: rgba(140, 255, 0, 0.08);
+
+  box-shadow:
+    0 0 15px rgba(140, 255, 0, 0.08);
+}
+
+
+/* =========================================
+   CAPTURE BUTTON
+========================================= */
+
+.capture-btn {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 15px 25px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: #8cff00;
+
+  color: #080a08;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(140, 255, 0, 0.2);
+
+  transition: 0.2s;
+}
+
+.capture-btn span {
+  font-size: 20px;
+}
+
+.capture-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 40px rgba(140, 255, 0, 0.3);
+}
+
+.capture-btn:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .layout-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .camera-screen {
+    padding: 20px;
+  }
+
+  .camera-top {
+    grid-template-columns:
+      auto 1fr auto;
+  }
+
+.camera-container {
+  width: min(420px, 85vw);
+  aspect-ratio: 1 / 1;
+
+  height: auto;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+}
+  .camera-controls {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .filter-placeholder {
+    width: 100%;
+  }
+
+  .capture-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .welcome {
+    padding: 40px 15px;
+  }
+
+  .email-card {
+    padding: 25px 18px;
+  }
+
+  .layout-screen {
+    padding: 40px 15px;
+  }
+
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .layout-preview {
+    height: 220px;
+  }
+
+  .camera-top h1 {
+    font-size: 22px;
+  }
+
+  .camera-layout {
+    font-size: 10px;
+  }
+
+}
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.camera-countdown {
+  position: absolute;
+
+  right: 25px;
+  bottom: 25px;
+
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  pointer-events: none;
+}
+
+.countdown-number {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  border: 2px solid #8cff00;
+
+  color: #8cff00;
+
+  font-size: 40px;
+
+  font-weight: 1000;
+
+  box-shadow:
+    0 0 25px rgba(140, 255, 0, 0.25);
+
+  backdrop-filter: blur(10px);
+
+  animation: countdownPop 0.7s ease;
+}
+
+.countdown-text {
+  margin-top: 8px;
+
+  padding: 6px 10px;
+
+  border-radius: 10px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  backdrop-filter: blur(8px);
+}
+
+@keyframes countdownPop {
+
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   CAMERA FLASH
+========================================= */
+
+.camera-flash {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  background: white;
+
+  pointer-events: none;
+
+  animation: flash 0.25s ease-out;
+}
+
+@keyframes flash {
+
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   CAPTURED PHOTO SCREEN
+========================================= */
+
+.captured-screen {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(140, 255, 0, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(120, 80, 255, 0.14),
+      transparent 30%
+    ),
+    #08090d;
+}
+
+
+/* =========================================
+   CAPTURED HEADER
+========================================= */
+
+.captured-header {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+.captured-header .camera-logo {
+  font-size: 30px;
+}
+
+.captured-header h1 {
+  margin: 5px 0;
+
+  font-size: 32px;
+
+  letter-spacing: -1px;
+}
+
+.captured-header h1 span {
+  color: #8cff00;
+}
+
+.captured-header p {
+  margin: 8px 0 0;
+
+  color: #8a8e9b;
+}
+
+
+/* =========================================
+   PHOTO PREVIEW
+========================================= */
+
+.captured-photo-container {
+  position: relative;
+
+  width: min(850px, 90vw);
+
+  max-height: 62vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  border-radius: 25px;
+
+  background: #0d0f15;
+
+  border: 1px solid #292c36;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+.captured-photo {
+  display: block;
+
+  width: 100%;
+
+  max-height: 60vh;
+
+  object-fit: contain;
+
+  border-radius: 18px;
+}
+
+.captured-filter {
+  position: absolute;
+
+  top: 25px;
+  left: 25px;
+
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  color: #8cff00;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   CAPTURE ACTIONS
+========================================= */
+
+.captured-actions {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+.retake-btn,
+.use-photo-btn {
+  padding: 15px 28px;
+
+  border-radius: 14px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.retake-btn {
+  border: 1px solid #343742;
+
+  background: #12141b;
+
+  color: #aaa;
+}
+
+.retake-btn:hover {
+  color: white;
+
+  border-color: #777;
+}
+
+.use-photo-btn {
+  border: none;
+
+  background: #8cff00;
+
+  color: #080a08;
+
+  box-shadow:
+    0 10px 30px rgba(140, 255, 0, 0.2);
+}
+
+.use-photo-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 40px rgba(140, 255, 0, 0.3);
+}
+
+
+/* =========================================
+   DISABLED CAPTURE
+========================================= */
+
+.capture-btn:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .captured-actions {
+    width: 90vw;
+
+    flex-direction: column;
+  }
+
+  .retake-btn,
+  .use-photo-btn {
+    width: 100%;
+  }
+
+}
+/* =========================================
+   POLAROID SCREEN
+========================================= */
+
+.polaroid-screen {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(140, 255, 0, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(120, 80, 255, 0.14),
+      transparent 30%
+    ),
+    #08090d;
+}
+
+
+/* HEADER */
+
+.polaroid-header {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.polaroid-header .camera-logo {
+  font-size: 30px;
+}
+
+.polaroid-header h1 {
+  margin: 5px 0;
+
+  font-size: clamp(35px, 5vw, 55px);
+
+  letter-spacing: -2px;
+}
+
+.polaroid-header h1 span {
+  color: #8cff00;
+}
+
+.polaroid-header p:last-child {
+  color: #858997;
+
+  margin-top: 8px;
+}
+
+
+/* POLAROID */
+
+.polaroid-card {
+  width: min(390px, 85vw);
+
+  padding: 15px 15px 25px;
+
+  background: #f5f5f2;
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55);
+
+ 
+}
+
+
+
+
+/* IMAGE */
+
+.polaroid-image-wrapper {
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+.polaroid-image-wrapper img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* CAPTION */
+
+
+
+/* ACTIONS */
+
+.polaroid-actions {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.polaroid-actions button {
+  min-width: 160px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+
+  .polaroid-actions {
+    width: 90vw;
+
+    flex-direction: column;
+  }
+
+  .polaroid-actions button {
+    width: 100%;
+  }
+
+}
+.photo-progress {
+  position: absolute;
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  color: #8cff00;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  backdrop-filter: blur(10px);
+
+  pointer-events: none;
+}
+.layout-preview-screen {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(140, 255, 0, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(120, 80, 255, 0.14),
+      transparent 30%
+    ),
+    #08090d;
+}
+
+.layout-preview-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.layout-preview-header h1 {
+  margin: 5px 0;
+
+  font-size: clamp(35px, 5vw, 55px);
+
+  letter-spacing: -2px;
+}
+
+.layout-preview-header h1 span {
+  color: #8cff00;
+}
+
+.layout-preview-header p:last-child {
+  color: #858997;
+}
+
+.grid-preview {
+  position: relative;
+
+  width: min(700px, 90vw);
+
+  padding: 12px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  gap: 10px;
+
+  background: #f5f5f2;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55);
+
+  aspect-ratio: 1 / 1;
+}
+
+.grid-photo {
+  overflow: hidden;
+
+  background: #ddd;
+
+  border-radius: 3px;
+}
+
+.grid-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.grid-brand {
+  position: absolute;
+
+  bottom: 10px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 5px 10px;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  color: #8cff00;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  border-radius: 5px;
+}
+
+.layout-preview-actions {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+@media (max-width: 550px) {
+
+  .layout-preview-actions {
+    width: 90vw;
+
+    flex-direction: column;
+  }
+
+  .layout-preview-actions button {
+    width: 100%;
+  }
+}
+/* =========================
+   PHOTO STRIP
+========================= */
+/* =========================
+   PHOTO STRIP PREVIEW
+========================= */
+/* =========================
+   STRIP SCREEN
+========================= */
+/* =========================
+   STRIP SCREEN
+========================= */
+
+.strip-screen {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px 20px 50px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+/* If your header is inside .strip-screen */
+.strip-screen h1,
+.strip-screen h2,
+.strip-screen p {
+  text-align: center;
+}
+
+
+/* =========================
+   PHOTO STRIP CARD
+========================= */
+
+/* =========================
+   STRIP SCREEN
+========================= */
+
+.strip-screen {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px 20px 50px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   PHOTO STRIP WHITE BORDER
+/* =========================
+   STRIP SCREEN
+========================= */
+
+.strip-screen {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 28px 20px 50px;
+  box-sizing: border-box;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   WHITE BORDER / CARD
+========================= */
+.photo-strip-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  /* BIG WHITE BORDER AROUND EVERYTHING */
+  padding: 45px 50px 50px;
+
+  background: #ffffff;
+  border-radius: 28px;
+
+  box-sizing: border-box;
+  overflow: visible;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================
+   STRIP CANVAS
+========================= */
+
+.strip-canvas {
+  position: relative;
+
+  /* BIGGER STRIP */
+  width: min(420px, 72vw);
+
+  aspect-ratio: 853 / 1844;
+
+  overflow: visible;
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+.strip-photo {
+  position: absolute;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  background: #111;
+}
+
+.strip-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* PHOTO 1 */
+
+.strip-photo-1 {
+  left: 30%;
+  top: 7%;
+
+  width: 40%;
+  height: 18.5%;
+}
+
+
+/* PHOTO 2 */
+
+.strip-photo-2 {
+  left: 30%;
+  top: 26.2%;
+
+  width: 40%;
+  height: 19%;
+}
+
+
+/* PHOTO 3 */
+
+.strip-photo-3 {
+  left: 30%;
+  top: 46.2%;
+
+  width: 40%;
+  height: 19.2%;
+}
+
+
+/* PHOTO 4 */
+
+.strip-photo-4 {
+  left: 30%;
+  top: 66%;
+
+  width: 40%;
+  height: 18.5%;
+}
+
+
+/* =========================
+   ANDROID FRAME
+========================= */
+
+.strip-frame-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  display: block;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.strip-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 20px;
+}
+
+
+.retake-btn,
+.use-photo-btn {
+  border: none;
+
+  min-height: 54px;
+
+  padding: 0 28px;
+
+  border-radius: 16px;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.retake-btn {
+  color: #eee;
+
+  background: #151922;
+
+  border: 1px solid #343947;
+}
+
+
+.use-photo-btn {
+  color: #050505;
+
+  background: #8cff00;
+
+  box-shadow:
+    0 12px 30px rgba(140, 255, 0, 0.25);
+}
+
+
+.retake-btn:hover,
+.use-photo-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+.use-photo-btn:hover {
+  box-shadow:
+    0 16px 35px rgba(140, 255, 0, 0.35);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .strip-screen {
+    padding: 20px 12px 35px;
+  }
+
+  .photo-strip-preview {
+    padding: 12px 14px 14px;
+    border-radius: 18px;
+  }
+
+  .strip-canvas {
+    width: min(360px, 82vw);
+  }
+
+  .strip-actions {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .retake-btn,
+  .use-photo-btn {
+    flex: 1;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+}
+/*=========================
+   THANK YOU SCREEN
+========================= */
+
+.thankyou-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(90, 255, 0, 0.12), transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(120, 0, 255, 0.12), transparent 35%),
+    #050608;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.thankyou-card {
+  width: min(600px, 90%);
+  padding: 60px 40px;
+  border: 1px solid #252932;
+  border-radius: 28px;
+  background: rgba(15, 17, 22, 0.9);
+  box-shadow: 0 0 60px rgba(100, 255, 0, 0.08);
+}
+
+.thankyou-card .small-logo {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: #8cff00;
+  font-size: 36px;
+  box-shadow: 0 0 35px rgba(140, 255, 0, 0.35);
+}
+
+.thankyou-card .step-label {
+  color: #8cff00;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.thankyou-card h1 {
+  font-size: clamp(36px, 6vw, 58px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  font-weight: 800;
+}
+
+.thankyou-card h1 span {
+  color: #8cff00;
+}
+
+.thankyou-card > p {
+  color: #9297a3;
+  font-size: 17px;
+  margin-bottom: 35px;
+}
+
+.thankyou-card .continue-button {
+  border: none;
+  border-radius: 14px;
+  padding: 18px 32px;
+  background: #8cff00;
+  color: #050608;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(140, 255, 0, 0.25);
+  transition: 0.2s ease;
+}
+
+.thankyou-card .continue-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(140, 255, 0, 0.4);
+}
+.thankyou-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.home-button {
+  border: 1px solid #30343d;
+  border-radius: 14px;
+  padding: 16px 30px;
+  background: #111319;
+  color: #b4b8c2;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.home-button:hover {
+  border-color: #8cff00;
+  color: #8cff00;
+  transform: translateY(-2px);
+}
+/* =========================
+   ADMIN LOGIN
+========================= */
+
+.admin-login-trigger {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+
+  padding: 8px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+
+  background: rgba(10, 11, 15, 0.7);
+  color: #666b76;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.2s ease;
+}
+
+.admin-login-trigger:hover {
+  color: #8cff00;
+  border-color: rgba(140, 255, 0, 0.3);
+}
+
+.admin-login-screen {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: #050608;
+  color: white;
+}
+
+.admin-login-card {
+  width: min(420px, 90vw);
+
+  padding: 45px 35px;
+
+  text-align: center;
+
+  border: 1px solid #242832;
+  border-radius: 24px;
+
+  background: #0d0f14;
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.admin-icon {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #8cff00;
+
+  font-size: 28px;
+}
+
+.admin-login-card h1 {
+  margin: 5px 0 10px;
+
+  font-size: 42px;
+}
+
+.admin-login-card h1 span {
+  color: #8cff00;
+}
+
+.admin-login-card > p:not(.step-label) {
+  color: #858997;
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
+}
+
+.admin-password {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  border: 1px solid #292d36;
+  border-radius: 10px;
+
+  background: #08090d;
+
+  color: white;
+
+  outline: none;
+
+  font-size: 15px;
+
+  margin-bottom: 12px;
+}
+
+.admin-password:focus {
+  border-color: #8cff00;
+}
+
+.admin-login-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #8cff00;
+  color: #050608;
+
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+.admin-back-button {
+  margin-top: 15px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777c87;
+
+  cursor: pointer;
+}
+.camera-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.camera-frame {
+  position: absolute;
+  inset: 7%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.frame-corner {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border: 3px solid white;
+  opacity: 0.9;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+.photo-progress {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+
+  color: white;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.photo-progress small {
+  opacity: 0.6;
+  margin-left: 4px;
+}
+.camera-flash-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.flash-white {
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 1;
+  animation: snapFlash 250ms ease-out forwards;
+}
+
+@keyframes snapFlash {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+/* =========================
+   LAYOUT PREVIEWS
+========================= */
+
+.layout-preview {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #050505;
+}
+
+
+/* =========================
+   POLAROID
+========================= */
+
+/* =========================
+   POLAROID — ANDROID PAPER CUT
+========================= */
+/* =========================================
+   POLAROID
+========================================= */
+
+.polaroid-card {
+  position: relative;
+
+  width: 420px;
+  max-width: 80vw;
+
+  /* IMPORTANT:
+     keep the frame's natural proportions */
+  height: auto;
+
+  margin: 0 auto;
+
+  filter:
+    drop-shadow(
+      10px 16px 20px rgba(0, 0, 0, 0.35)
+    );
+}
+
+
+/* PHOTO INSIDE THE FRAME */
+
+/* ACTUAL POLAROID FRAME */
+
+.polaroid-frame {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  position: relative;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+/* =========================
+   PHOTO STRIP
+========================= */
+
+.preview-strip {
+  width: 105px;
+  padding: 8px 8px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: white;
+  box-shadow: 0 14px 30px rgba(0,0,0,.45);
+}
+
+.preview-strip div {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.preview-strip div:nth-child(1) {
+  background: linear-gradient(135deg, #7565df, #9a54d8);
+}
+
+.preview-strip div:nth-child(2) {
+  background: linear-gradient(135deg, #ff7467, #ff9270);
+}
+
+.preview-strip div:nth-child(3) {
+  background: linear-gradient(135deg, #39a9e8, #48c6ef);
+}
+
+.preview-strip span {
+  margin-top: 5px;
+  text-align: center;
+  color: #111;
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+/* =================================
+   FINAL COLLAGE
+================================= */
+.preview-collage {
+  position: relative;
+  width: 170px;
+  height: 210px;
+  margin: auto;
+}
+
+.preview-collage-photo {
+  position: absolute;
+  width: 105px;
+  height: 80px;
+  background: linear-gradient(135deg, #8b5cf6, #4f46e5);
+  border: 5px solid white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+.preview-collage-1 {
+  top: 15px;
+  left: 5px;
+  transform: rotate(-8deg);
+}
+
+.preview-collage-2 {
+  top: 25px;
+  right: 0;
+  transform: rotate(6deg);
+}
+
+.preview-collage-3 {
+  top: 85px;
+  left: 45px;
+  transform: rotate(-3deg);
+  z-index: 3;
+}
+
+.preview-collage-brand {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+
+
+/* =========================================
+   FINAL POLAROID FIX
+========================================= */
+
+/* =====================================================
+   POLAROID PHOTO FIX
+   DO NOT CHANGE THE FRAME DESIGN
+===================================================== */
+
+.polaroid-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* The actual photo */
+.polaroid-photo-window {
+  position: absolute;
+
+  /*
+    PHOTO OPENING INSIDE YOUR FRAME
+    These percentages keep the photo attached
+    to the frame even when the frame scales.
+  */
+  left: 14%;
+  top: 15%;
+  width: 72%;
+  height: 64%;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  background: #000;
+}
+
+.polaroid-photo-window img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /*
+    Keeps the camera photo natural.
+    It will fill the opening without stretching.
+  */
+  object-fit: cover;
+}
+
+/* Frame sits above the photo */
+.polaroid-card .filmstrip-frame {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  z-index: 2;
+
+  pointer-events: none;
+}.strip-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+/* =========================
+   STRIP SCREEN
+========================= */
+
+.strip-screen {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* keep the dark SnapDroid theme */
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(90, 255, 0, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(120, 0, 255, 0.12),
+      transparent 35%
+    ),
+    #050608;
+
+  color: white;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   STRIP PREVIEW
+========================= */
+
+/* =========================
+   WHITE BORDER / CARD
+========================= */
+
+.photo-strip-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Keep the strip large */
+  width: fit-content;
+
+  /* BIG WHITE BORDER AROUND THE WHOLE DESIGN */
+  padding: 20px 0px 5px;
+
+  background: #ffffff;
+
+  border-radius: 30px;
+
+  box-sizing: border-box;
+
+  /* IMPORTANT:
+     lets the Bugdroid artwork stay visible */
+  overflow: visible;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================
+   STRIP CANVAS
+========================= */
+
+.strip-canvas {
+  position: relative;
+
+  width: min(420px, 72vw);
+
+  aspect-ratio: 853 / 1844;
+
+  overflow: visible;
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+.strip-photo {
+  position: absolute;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  background: #111;
+}
+
+.strip-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* PHOTO 1 */
+
+.strip-photo-1 {
+  left: 30%;
+  top: 7%;
+
+  width: 40%;
+  height: 18.5%;
+}
+
+
+/* PHOTO 2 */
+
+.strip-photo-2 {
+  left: 30%;
+  top: 26.2%;
+
+  width: 40%;
+  height: 19%;
+}
+
+
+/* PHOTO 3 */
+
+.strip-photo-3 {
+  left: 30%;
+  top: 46.2%;
+
+  width: 40%;
+  height: 19.2%;
+}
+
+
+/* PHOTO 4 */
+
+.strip-photo-4 {
+  left: 30%;
+  top: 66%;
+
+  width: 40%;
+  height: 18.5%;
+}
+
+
+/* =========================
+   ANDROID FRAME
+========================= */
+
+.strip-frame-overlay {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  display: block;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.strip-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 18px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .strip-screen {
+    padding: 20px 12px;
+  }
+
+  .photo-strip-preview {
+    width: min(350px, 90vw);
+    padding: 2px;
+  }
+
+  .strip-canvas {
+    width: min(340px, 88vw);
+  }
+
+  .strip-actions {
+    gap: 10px;
+  }
+}
+.strip-header {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+
+  margin-bottom: 28px;
+}
+
+.strip-header .strip-eyebrow {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.strip-header p {
+  margin: 0 0 18px;
+
+  color: #f5f5f5;
+
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.strip-header h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+
+  letter-spacing: -2px;
+}
+
+.strip-header h1 span {
+  color: #8cff00;
+}
+
+.strip-header h2 {
+  margin: 14px 0 0;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 17px;
+  font-weight: 500;
+}
+.vibe-preview {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #080a08;
+  border-radius: 18px;
+
+  overflow: hidden;
+  position: relative;
+}
+
+  
+
+.strip-vibe-preview {
+  position: relative;
+
+  width: 135px;
+  aspect-ratio: 853 / 1844;
+
+  overflow: visible;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.strip-vibe-preview img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+.preview-polaroid,
+.preview-strip {
+  width: 100%;
+  height: 250px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.template-preview-image {
+  width: auto;
+  height: 230px;
+
+  max-width: 90%;
+  object-fit: contain;
+
+  display: block;
+}
+.preview-strip .template-preview-image {
+  height: 240px;
+  max-width: 80%;
+}
+.preview-polaroid {
+  position: relative;
+  width: 800px;
+  padding: 0;
+  background: #ffffff;
+  overflow: hidden;
+  transform: none !important;
+}
+
+.polaroid-frame-overlay {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transform: none !important;
+}
+.polaroid-template-preview {
+  width: 70%;
+  height: 90%;
+  object-fit: contain;
+  display: block;
+}
+.preview-polaroid::after {
+  content: "";
+  position: absolute;
+
+  left: 40%;
+  bottom: 1.5%;
+
+  width: 20%;
+  height: 5%;
+
+  background: #ffffff;
+
+  z-index: 20;
+  pointer-events: none;
+}
