@@ -1,16 +1,79 @@
-# React + Vite
+SnapDroid
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SnapDroid is a simple photo booth web app made for the Android Club at VIT Chennai.
 
-Currently, two official plugins are available:
+The idea is pretty straightforward:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Take a photo at the booth
 
-## React Compiler
+Choose a frame/style
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Preview the final photo
 
-## Expanding the ESLint configuration
+Download the photo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Keep the photos stored locally
+
+What it uses
+
+React + Vite for the frontend
+
+Node.js + Express for the backend
+
+Nodemailer for the email feature
+
+Local storage for the captured photos and event posters
+
+Project structure
+
+SnapDroid/
+├── public/
+├── server/
+│   ├── photo-queue/
+│   │   ├── images/
+│   │   └── posters/
+│   └── index.cjs
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   └── ...
+├── package.json
+└── README.md
+
+Run it locally
+
+Install the dependencies:
+
+npm install
+
+Start the frontend:
+
+npm run dev
+
+Start the backend in another terminal:
+
+node server/index.cjs
+
+Then open the local address shown by Vite in your browser.
+
+Notes
+
+The backend handles the photo queue and other server-side operations.
+
+If you use the email-sending part, keep your email credentials in .env and don't push that file to GitHub.
+
+Example:
+
+EMAIL_USER=your-email@example.com
+EMAIL_PASS=your-app-password
+
+Deployment
+
+The frontend can be deployed as a static site, including through GitHub Pages.
+
+The Express backend is different: GitHub Pages cannot run a Node.js server. If the live version needs the backend, deploy the backend separately on a service that supports Node.js and update the frontend API URL accordingly.
+
+Made for
+
+Android Club
+VIT Chennai
