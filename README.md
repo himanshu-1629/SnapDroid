@@ -1,79 +1,58 @@
-SnapDroid
+# 📸 SnapDroid
 
-SnapDroid is a simple photo booth web app made for the Android Club at VIT Chennai.
+SnapDroid is a fun, interactive photo booth web app created for the **Android Club at VIT Chennai**.
 
-The idea is pretty straightforward:
+It lets users capture photos, apply different visual filters, choose a photo layout, preview their final memory, and download it.
 
-Take a photo at the booth
+## ✨ What SnapDroid Does
 
-Choose a frame/style
+The experience is simple:
 
-Preview the final photo
+1. 📷 **Capture a photo**
+2. 🎨 **Choose a filter/style**
+3. 🖼️ **Choose a memory layout**
+   - Polaroid
+   - Photo Strip
+4. 👀 **Preview the final memory**
+5. ⬇️ **Download the finished photo**
 
-Download the photo
+The application processes the photos directly in the browser, making it lightweight and easy to run as a static web application.
 
-Keep the photos stored locally
+---
 
-What it uses
+## 🛠️ Tech Stack
 
-React + Vite for the frontend
+### Frontend
 
-Node.js + Express for the backend
+- **React** – UI and application logic
+- **Vite** – Development server and production build tool
+- **JavaScript / JSX** – Application functionality
+- **CSS** – Styling and animations
+- **HTML Canvas** – Photo processing and final image generation
 
-Nodemailer for the email feature
+### Storage
 
-Local storage for the captured photos and event posters
+Captured photos and application state are handled on the client side using browser storage where required.
 
-Project structure
+---
 
+## 📁 Project Structure
+
+```text
 SnapDroid/
 ├── public/
-├── server/
-│   ├── photo-queue/
-│   │   ├── images/
-│   │   └── posters/
-│   └── index.cjs
+│   ├── polaroid-frame.png
+│   ├── photo-strip-frame.png
+│   ├── favicon.svg
+│   └── ...
+│
 ├── src/
 │   ├── App.jsx
 │   ├── App.css
+│   ├── main.jsx
 │   └── ...
+│
+├── index.html
 ├── package.json
+├── vite.config.js
 └── README.md
-
-Run it locally
-
-Install the dependencies:
-
-npm install
-
-Start the frontend:
-
-npm run dev
-
-Start the backend in another terminal:
-
-node server/index.cjs
-
-Then open the local address shown by Vite in your browser.
-
-Notes
-
-The backend handles the photo queue and other server-side operations.
-
-If you use the email-sending part, keep your email credentials in .env and don't push that file to GitHub.
-
-Example:
-
-EMAIL_USER=your-email@example.com
-EMAIL_PASS=your-app-password
-
-Deployment
-
-The frontend can be deployed as a static site, including through GitHub Pages.
-
-The Express backend is different: GitHub Pages cannot run a Node.js server. If the live version needs the backend, deploy the backend separately on a service that supports Node.js and update the frontend API URL accordingly.
-
-Made for
-
-Android Club
-VIT Chennai
